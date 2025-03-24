@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md w-full max-w-md mx-auto">
+  <h1 class="text-2xl font-bold mb-6 text-center">Upload a File</h1>
+
+  <form method="POST" enctype="multipart/form-data" class="space-y-4">
+    {{ form.hidden_tag() }}
+
+    <div>
+      {{ form.file.label(class="block text-sm font-medium text-gray-700") }}
+      {{ form.file(class="mt-1 block w-full border border-gray-300 rounded p-2 cursor-pointer") }}
+      {% for error in form.file.errors %}
+        <p class="text-sm text-red-500">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <div>
+      {{ form.password.label(class="block text-sm font-medium text-gray-700") }}
+      {{ form.password(class="mt-1 block w-full border border-gray-300 rounded p-2") }}
+      {% for error in form.password.errors %}
+        <p class="text-sm text-red-500">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <div>
+      {{ form.submit(class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition cursor-pointer") }}
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Successful{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md w-full max-w-md text-center mx-auto">
+  <h1 class="text-2xl font-bold mb-4">File Uploaded Successfully!</h1>
+  <p class="mb-6">Your file has been uploaded securely.</p>
+
+  <a href="{{ file_url }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+    Access File
+  </a>
+
+  <div class="mt-6">
+    <a href="{{ url_for('main.index') }}" class="text-sm text-blue-500 hover:underline">Upload Another File</a>
+  </div>
+</div>
+{% endblock %}
