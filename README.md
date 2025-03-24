@@ -62,8 +62,9 @@ cd flask-secure-file-share-app
 
 Create a `.env` file in the root directory and copy the content from `.env.example` into it:
 
-```bash
+~~~bash
 cp .env.example .env
+~~~
 
 ### 3. Build and run the app
 
